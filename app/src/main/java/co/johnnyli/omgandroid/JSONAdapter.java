@@ -8,8 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -50,7 +48,7 @@ public class JSONAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.row_book, null);
             holder = new ViewHolder();
-            holder.thumbnailImageView = (ImageView) convertView.findViewById(R.id.img_thumbnail);
+//            holder.thumbnailImageView = (ImageView) convertView.findViewById(R.id.img_thumbnail);
             holder.titleTextView = (TextView) convertView.findViewById(R.id.text_title);
             holder.authorTextView = (TextView) convertView.findViewById(R.id.text_author);
             convertView.setTag(holder);
@@ -59,15 +57,15 @@ public class JSONAdapter extends BaseAdapter {
         }
         JSONObject jsonObject = (JSONObject) getItem(position);
 
-        if (jsonObject.has("cover_i")) {
-            String imageID = jsonObject.optString("cover_i");
-            String imageURL = IMAGE_URL_BASE + imageID + "-S.jpg";
-
-            Picasso.with(mContext).load(imageURL).placeholder(R.drawable.ic_books).into
-                    (holder.thumbnailImageView);
-        } else {
-            holder.thumbnailImageView.setImageResource(R.drawable.ic_books);
-        }
+//        if (jsonObject.has("cover_i")) {
+//            String imageID = jsonObject.optString("cover_i");
+//            String imageURL = IMAGE_URL_BASE + imageID + "-S.jpg";
+//
+//            Picasso.with(mContext).load(imageURL).placeholder(R.drawable.ic_books).into
+//                    (holder.thumbnailImageView);
+//        } else {
+//            holder.thumbnailImageView.setImageResource(R.drawable.ic_books);
+//        }
         String bookTitle = "";
         String authorName = "";
 

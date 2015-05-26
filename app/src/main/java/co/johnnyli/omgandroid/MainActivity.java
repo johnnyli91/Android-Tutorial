@@ -64,6 +64,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         mDialog = new ProgressDialog(this);
         mDialog.setMessage("Searching for Book");
         mDialog.setCancelable(false);
+        queryBooks("test");
     }
 
     private void displayWelcome() {
